@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: animeace2_reg;
+    src:url(animeace2_reg.ttf) format(truetype);
+    font-weight: normal;
+}
+@font-face {
+    font-family: animeace2_bld;
+    src: url(animeace2_bld.ttf) format(truetype);
+    font-weight: bold;
+}
+.body{
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F8FAE4;
+    max-width: min-content;
+    min-width: 100vw;
+}
+
+.logo{
+    width: 60px;
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 15px;
+    display: none;
+}
+
+.nav{
+    background-color: #D0DD97;
+}
+
+.nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav li{
+    height: 90px;
+}
+
+.nav li:first-child{
+    margin-right: auto;
+}
+
+.nav a{
+    height: 100%;
+    padding: 0 10px;
+    text-decoration: none;
+    font-family: animeace2_reg;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    color: black;
+    display: flex;
+}
+
+.nav a:hover{
+    background-color: #658361;
+}
+
+.wrapper{
+    width:100%;
+}
+
+.img-banner{
+    display: none;
+}
+
+.img-info{
+    width: 100%;
+}
+
+.img-info h2{
+    padding: 30px 30px 20px;
+    font-family: animeace2_reg;
+    font-size: 40px;
+    color: #111;
+    line-height: 80px;
+}
+
+.img-info h3{
+    padding: 30px 30px 20px;
+    font-family: animeace2_reg;
+    font-size: 30px;
+    color: #111;
+    line-height: 50px;
+}
+
+.img-info p{
+    padding: 20px 30px 20px;
+    font-family: animeace2_reg;
+    font-size: 16px;
+    color: #111;
+    line-height: 30px;
+}
+
+.img-me{
+    width: 100%;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.content a{
+    text-decoration: none;
+}
+
+button{
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px 10px;
+    border-radius: 0px;
+    font-weight: bold;
+    font-family: animeace2_reg;
+    border: 3px solid;
+    background: transparent;
+    color: #000000;
+    cursor: pointer;
+    position: relative;
+    top: 23%;
+    left: 15%;
+    overflow: hidden;
+    display: block;
+}
+
+button:hover{
+    border: none;
+}
+
+@media only screen and (min-width: 768px){
+    .img-banner{
+        display: block;
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .nav a{
+        padding: 0 30px;
+    }
+    .wrapper{
+        width: 600px;
+        margin: 0 auto;
+    }
+    .img-info h2{
+        padding: 60px 0px 0px;
+    }
+    .img-info h3{
+        font-size: 40px;
+        line-height: 80px;
+        padding: 60px 30px 20px;
+    }
+    .img-info p{
+        padding: 20px 0px 0px;
+    }
+    .img-me{
+        padding-top: 60px;
+    }
+    .logo{
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .nav a{
+        padding: 0 30px;
+    }
+    .wrapper{
+        width: 1000px;
+    }
+    .img-info{
+        width: 50%;
+        float: right;
+    }
+    .img-info h2{
+        padding: 60px 0px 0px 30px;
+    }
+    .img-info h3{
+        font-size: 40px;
+        line-height: 80px;
+        padding: 60px 30px 20px;
+    }
+    .img-info p{
+        padding: 20px 0px 0px 30px;
+    }
+    .img-me{
+        padding-top: 60px;
+        width: 50%;
+        float: left;
+    }
+    .logo{
+        display: flex;
+    }
+}

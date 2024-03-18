@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+        <div class="nav">
+            <ul>
+                <li><img src="logo.png" class="logo"></li>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="aboutme.html">ABOUT ME</a></li>
+                <li><a href="assignments.html">ASSIGNMENTS</a></li>
+            </ul>
+        </div>
+    <div class="body">
+        <div class="wrapper">
+            <article class="img-info">
+                <h2>Tugas 3: eksperimen menggunakan aplikasi proteus</h2>
+            </article>
+            <img src="tugas3.png" class="img-me" alt="tugas 3">
+            <img src="helloworld.png" class="img-me" alt="output hello world">
+            <article class="img-info">
+                <p>penjelasan:</p>
+                <p>Proteus adalah sebuah perangkat lunak yang membantu Anda merancang dan memeriksa PCB (Printed Circuit Board) sebelum mencetaknya. Dengan fitur simulasi seperti PSPICE, Anda bisa melihat bagaimana rangkaian skematik bekerja sebelum dijadikan PCB. Proteus terdiri dari dua program utama: ISIS untuk membuat skematik rangkaian dan ARES untuk merancang layout PCB. Ini sangat berguna untuk desain mikrokontroler dan belajar elektronika, karena menyediakan contoh aplikasi desain yang bisa dipelajari.</p>
+                <p>Berikut merupakan sourcecode untuk menampilkan “Hello World!” pada LCD.</p>
+                <p>// include the library code:<br>
+                    #include < LiquidCrystal.h ><br>
+                        <br>
+                    // initialize the library by associating any needed LCD interface pin<br>
+                    // with the arduino pin number it is connected to<br>
+                    const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;<br>
+                    LiquidCrystal lcd(rs, en, d4, d5, d6, d7);<br>
+                    <br>
+                    // make some custom characters:<br>
+                    byte heart[8] = {<br>
+                      0b00000,
+                      0b01010,<br>
+                      0b11111,
+                      0b11111,<br>
+                      0b11111,
+                      0b01110,<br>
+                      0b00100,
+                      0b00000
+                    };<br>
+                    <br>
+                    byte smiley[8] = {<br>
+                      0b00000,
+                      0b00000,<br>
+                      0b01010,
+                      0b00000,<br>
+                      0b00000,
+                      0b10001,<br>
+                      0b01110,
+                      0b00000
+                    };<br>
+                    <br>
+                    byte frownie[8] = {<br>
+                      0b00000,
+                      0b00000,<br>
+                      0b01010,
+                      0b00000,<br>
+                      0b00000,
+                      0b00000,<br>
+                      0b01110,
+                      0b10001
+                    };<br>
+                    <br>
+                    byte armsDown[8] = {<br>
+                      0b00100,
+                      0b01010,<br>
+                      0b00100,
+                      0b00100,<br>
+                      0b01110,
+                      0b10101,<br>
+                      0b00100,
+                      0b01010
+                    };<br>
+                    <br>
+                    byte armsUp[8] = {<br>
+                      0b00100,
+                      0b01010,<br>
+                      0b00100,
+                      0b10101,<br>
+                      0b01110,
+                      0b00100,<br>
+                      0b00100,
+                      0b01010
+                    };<br>
+                    <br>
+                    void setup() {<br>
+                      // initialize LCD and set up the number of columns and rows:<br>
+                      lcd.begin(16, 2);<br>
+                      <br>
+                      // set the cursor to the top left<br>
+                      lcd.setCursor(0, 0);<br>
+                      <br>
+                      // Print a message to the lcd.<br>
+                      lcd.print("Hello ");<br>
+                      lcd.print(" World! ");
+                    }
+                    <br>
+                    void loop() {<br>
+                      // read the potentiometer on A0:<br>
+                      int sensorReading = analogRead(A0);<br>
+                      // map the result to 200 - 1000:<br>
+                      int delayTime = map(sensorReading, 0, 1023, 200, 1000);<br>
+                      // set the cursor to the bottom row, 5th position:<br>
+                      lcd.setCursor(4, 1);<br>
+                      // draw the little man, arms down:<br>
+                      lcd.write(3);<br>
+                      delay(delayTime);<br>
+                      lcd.setCursor(4, 1);<br>
+                      // draw him arms up:<br>
+                      lcd.write(4);<br>
+                      delay(delayTime);
+                    }
+                    </p>
+            </article>
+        </div>
+    </div>
+</html>
